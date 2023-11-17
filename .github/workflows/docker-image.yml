@@ -25,8 +25,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run:         
-        docker build . --file WebApp.Dockerfile --tag fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker tag fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:latest;
-        docker push fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker push fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:latest;
+        docker build . --file WebApp.Dockerfile --tag crmt122adminai750054232041.azurecr.io:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker tag crmt122adminai750054232041.azurecr.io:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER crmt122adminai750054232041.azurecr.io:latest;
+        docker push crmt122adminai750054232041.azurecr.io:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker push crmt122adminai750054232041.azurecr.io:latest;
       
