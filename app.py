@@ -59,9 +59,9 @@ AZURE_SEARCH_STRICTNESS = os.environ.get("AZURE_SEARCH_STRICTNESS", SEARCH_STRIC
 
 # AOAI Integration Settings
 AZURE_OPENAI_RESOURCE = os.environ.get("")
-AZURE_OPENAI_MODEL = os.environ.get("gpt-4")
-AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT")
-AZURE_OPENAI_KEY = os.environ.get("60ef1ac67f78490cb4aaab8bffd0f454")
+AZURE_OPENAI_MODEL = os.environ.get("AZURE_OPENAI_MODEL", "gpt-4")
+AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT", "https://mt122-admin-ai-aiservices.openai.azure.com")
+AZURE_OPENAI_KEY = os.environ.get("AZURE_OPENAI_KEY", "60ef1ac67f78490cb4aaab8bffd0f454")
 AZURE_OPENAI_TEMPERATURE = os.environ.get("AZURE_OPENAI_TEMPERATURE", 0)
 AZURE_OPENAI_TOP_P = os.environ.get("AZURE_OPENAI_TOP_P", 1.0)
 AZURE_OPENAI_MAX_TOKENS = os.environ.get("AZURE_OPENAI_MAX_TOKENS", 1000)
