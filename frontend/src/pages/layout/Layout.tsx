@@ -74,7 +74,7 @@ const Layout = () => {
                 >
                     <Stack horizontal verticalAlign="center">
                         <Link to="/" className={styles.headerTitleContainer}>
-                            <h1 className={styles.headerTitle}>Sigma AI</h1>
+                            <h1 className={styles.headerTitle}>Sigma GPT-4</h1>
                         </Link>
                     </Stack>
                     <Stack horizontal tokens={{ childrenGap: 4 }}>
