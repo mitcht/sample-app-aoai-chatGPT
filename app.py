@@ -59,7 +59,7 @@ AZURE_SEARCH_STRICTNESS = os.environ.get("AZURE_SEARCH_STRICTNESS", SEARCH_STRIC
 
 # AOAI Integration Settings
 AZURE_OPENAI_RESOURCE = os.environ.get("")
-AZURE_OPENAI_MODEL = os.environ.get("AZURE_OPENAI_MODEL", "gpt-4")
+AZURE_OPENAI_MODEL = "gpt-4"
 AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT", "https://mt122-admin-ai-aiservices.openai.azure.com")
 AZURE_OPENAI_KEY = os.environ.get("AZURE_OPENAI_KEY", "60ef1ac67f78490cb4aaab8bffd0f454")
 AZURE_OPENAI_TEMPERATURE = os.environ.get("AZURE_OPENAI_TEMPERATURE", 0)
@@ -69,7 +69,7 @@ AZURE_OPENAI_STOP_SEQUENCE = os.environ.get("AZURE_OPENAI_STOP_SEQUENCE")
 AZURE_OPENAI_SYSTEM_MESSAGE = os.environ.get("AZURE_OPENAI_SYSTEM_MESSAGE", "You are an AI assistant that helps people find information.")
 AZURE_OPENAI_PREVIEW_API_VERSION = os.environ.get("AZURE_OPENAI_PREVIEW_API_VERSION", "2023-08-01-preview")
 AZURE_OPENAI_STREAM = os.environ.get("AZURE_OPENAI_STREAM", "true")
-AZURE_OPENAI_MODEL_NAME = os.environ.get("AZURE_OPENAI_MODEL_NAME", "gpt-35-turbo-16k") # Name of the model, e.g. 'gpt-35-turbo-16k' or 'gpt-4'
+AZURE_OPENAI_MODEL_NAME = "gpt-4" # Name of the model, e.g. 'gpt-35-turbo-16k' or 'gpt-4'
 AZURE_OPENAI_EMBEDDING_ENDPOINT = os.environ.get("AZURE_OPENAI_EMBEDDING_ENDPOINT")
 AZURE_OPENAI_EMBEDDING_KEY = os.environ.get("AZURE_OPENAI_EMBEDDING_KEY")
 AZURE_OPENAI_EMBEDDING_NAME = os.environ.get("AZURE_OPENAI_EMBEDDING_NAME", "")
@@ -492,7 +492,7 @@ def conversation_without_data(request_body):
             })
 
     response = openai.ChatCompletion.create(
-        engine=AZURE_OPENAI_MODEL,
+        engine="gpt-4",
         messages = messages,
         temperature=float(AZURE_OPENAI_TEMPERATURE),
         max_tokens=int(AZURE_OPENAI_MAX_TOKENS),
@@ -781,7 +781,7 @@ def generate_title(conversation_messages):
 
     messages = [{'role': msg['role'], 'content': msg['content']} for msg in conversation_messages]
     messages.append({'role': 'user', 'content': title_prompt})
-
+    
     try:
         ## Submit prompt to Chat Completions for response
         base_url = AZURE_OPENAI_ENDPOINT if AZURE_OPENAI_ENDPOINT else f"https://{AZURE_OPENAI_RESOURCE}.openai.azure.com/"
@@ -790,7 +790,7 @@ def generate_title(conversation_messages):
         openai.api_version = "2023-03-15-preview"
         openai.api_key = AZURE_OPENAI_KEY
         completion = openai.ChatCompletion.create(    
-            engine=AZURE_OPENAI_MODEL,
+            engine="gpt-4",
             messages=messages,
             temperature=1,
             max_tokens=64 

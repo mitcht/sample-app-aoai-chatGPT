@@ -355,7 +355,7 @@
                         },
                         {
                             "name": "AZURE_OPENAI_MODEL",
-                            "value": "[parameters('AzureOpenAIModel')]"
+                            "value": "gpt-4"
                         },
                         {
                             "name": "AZURE_OPENAI_KEY",
@@ -363,7 +363,7 @@
                         },
                         {
                             "name": "AZURE_OPENAI_MODEL_NAME",
-                            "value": "[parameters('AzureOpenAIModelName')]"
+                            "value": "gpt-4"
                         },
                         {
                             "name": "AZURE_OPENAI_TEMPERATURE",
