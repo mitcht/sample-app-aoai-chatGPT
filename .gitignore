@@ -4,3 +4,9 @@ frontend/node_modules
 # static
 .azure/
 __pycache__/
+
+/.vs/sample-app-aoai-chatGPT/config/applicationhost.config
+/.vs/sample-app-aoai-chatGPT/v17/.wsuo
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/app.py
